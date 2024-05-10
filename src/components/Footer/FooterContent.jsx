@@ -26,45 +26,45 @@ const FooterContent = () => {
                                     </div>
                                 </div>
                                 <div className="mt-5 flex space-x-6 sm:mt-0 sm:justify-center md:justify-start">
-                                    <Footer.Icon className="text-[#474747] hover:decoration-transparent hover:text-[#009444] font-semibold" href="#" icon={BsFacebook} />
-                                    <Footer.Icon className="text-[#474747] hover:decoration-transparent hover:text-[#009444] font-semibold" href="#" icon={BsInstagram} />
-                                    <Footer.Icon className="text-[#474747] hover:decoration-transparent hover:text-[#009444] font-semibold" href="#" icon={BsTwitter} />
-                                    <Footer.Icon className="text-[#474747] hover:decoration-transparent hover:text-[#009444] font-semibold" href="#" icon={BsGithub} />
-                                    <Footer.Icon className="text-[#474747] hover:decoration-transparent hover:text-[#009444] font-semibold" href="#" icon={BsDribbble} />
+                                    <Footer.Icon className="text-[#474747] hover:decoration-transparent hover:text-[#03A5FA] font-semibold" href="#" icon={BsFacebook} />
+                                    <Footer.Icon className="text-[#474747] hover:decoration-transparent hover:text-[#03A5FA] font-semibold" href="#" icon={BsInstagram} />
+                                    <Footer.Icon className="text-[#474747] hover:decoration-transparent hover:text-[#03A5FA] font-semibold" href="#" icon={BsTwitter} />
+                                    <Footer.Icon className="text-[#474747] hover:decoration-transparent hover:text-[#03A5FA] font-semibold" href="#" icon={BsGithub} />
+                                    <Footer.Icon className="text-[#474747] hover:decoration-transparent hover:text-[#03A5FA] font-semibold" href="#" icon={BsDribbble} />
                                 </div>
                             </div>
                             <div className="grid grid-cols-2 gap-8 mt-5 sm:grid-cols-3 sm:gap-6 md:mt-0">
                                 <div>
-                                    <Footer.Title className="text-[#009444]" title="Services" />
+                                    <Footer.Title className="text-[#03A5FA]" title="Services" />
                                     <Footer.LinkGroup col>
-                                        <Footer.Link className="text-[#474747] hover:decoration-transparent hover:text-[#009444] font-semibold" href="#">Blogs</Footer.Link>
-                                        <Footer.Link className="text-[#474747] hover:decoration-transparent hover:text-[#009444] font-semibold" href="#">Add Blog</Footer.Link>
-                                        <Footer.Link className="text-[#474747] hover:decoration-transparent hover:text-[#009444] font-semibold" href="#">Read Blogs</Footer.Link>
-                                        <Footer.Link className="text-[#474747] hover:decoration-transparent hover:text-[#009444] font-semibold" href="#">Wishlist Blogs</Footer.Link>
+                                        <Footer.Link className="text-[#474747] hover:decoration-transparent hover:text-[#03A5FA] font-semibold" href="#">Blogs</Footer.Link>
+                                        <Footer.Link className="text-[#474747] hover:decoration-transparent hover:text-[#03A5FA] font-semibold" href="#">Add Blog</Footer.Link>
+                                        <Footer.Link className="text-[#474747] hover:decoration-transparent hover:text-[#03A5FA] font-semibold" href="#">Read Blogs</Footer.Link>
+                                        <Footer.Link className="text-[#474747] hover:decoration-transparent hover:text-[#03A5FA] font-semibold" href="#">Wishlist Blogs</Footer.Link>
                                     </Footer.LinkGroup>
                                 </div>
                                 <div>
-                                    <Footer.Title className="text-[#009444]" title="Follow us" />
+                                    <Footer.Title className="text-[#03A5FA]" title="Follow us" />
                                     <Footer.LinkGroup col>
-                                        <Footer.Link className="text-[#474747] hover:decoration-transparent hover:text-[#009444] font-semibold" href="#">Facebook</Footer.Link>
-                                        <Footer.Link className="text-[#474747] hover:decoration-transparent hover:text-[#009444] font-semibold" href="#">Instagram</Footer.Link>
-                                        <Footer.Link className="text-[#474747] hover:decoration-transparent hover:text-[#009444] font-semibold" href="#">Twitter</Footer.Link>
-                                        <Footer.Link className="text-[#474747] hover:decoration-transparent hover:text-[#009444] font-semibold" href="#">Github</Footer.Link>
+                                        <Footer.Link className="text-[#474747] hover:decoration-transparent hover:text-[#03A5FA] font-semibold" href="#">Facebook</Footer.Link>
+                                        <Footer.Link className="text-[#474747] hover:decoration-transparent hover:text-[#03A5FA] font-semibold" href="#">Instagram</Footer.Link>
+                                        <Footer.Link className="text-[#474747] hover:decoration-transparent hover:text-[#03A5FA] font-semibold" href="#">Twitter</Footer.Link>
+                                        <Footer.Link className="text-[#474747] hover:decoration-transparent hover:text-[#03A5FA] font-semibold" href="#">Github</Footer.Link>
                                     </Footer.LinkGroup>
                                 </div>
                                 <div>
-                                    <Footer.Title className="text-[#009444]" title="Legal" />
+                                    <Footer.Title className="text-[#03A5FA]" title="Legal" />
                                     <Footer.LinkGroup col>
-                                        <Footer.Link className="text-[#474747] hover:decoration-transparent hover:text-[#009444] font-semibold" href="#">Cookie Policy</Footer.Link>
-                                        <Footer.Link className="text-[#474747] hover:decoration-transparent hover:text-[#009444] font-semibold" href="#">Privacy Policy</Footer.Link>
-                                        <Footer.Link className="text-[#474747] hover:decoration-transparent hover:text-[#009444] font-semibold" href="#">Terms &amp; Conditions</Footer.Link>
+                                        <Footer.Link className="text-[#474747] hover:decoration-transparent hover:text-[#03A5FA] font-semibold" href="#">Cookie Policy</Footer.Link>
+                                        <Footer.Link className="text-[#474747] hover:decoration-transparent hover:text-[#03A5FA] font-semibold" href="#">Privacy Policy</Footer.Link>
+                                        <Footer.Link className="text-[#474747] hover:decoration-transparent hover:text-[#03A5FA] font-semibold" href="#">Terms &amp; Conditions</Footer.Link>
                                     </Footer.LinkGroup>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="w-full sm:flex sm:items-center sm:justify-between bg-[#009444] text-white py-4 mt-7">
+                <div className="w-full sm:flex sm:items-center sm:justify-between bg-[#03A5FA] text-white py-4 mt-7">
                     <p className="text-center mx-auto font-semibold"> &copy; 2024 All Rights Reserved By Scribble</p>
                 </div>
             </div>
