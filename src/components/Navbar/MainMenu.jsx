@@ -26,7 +26,7 @@ const MainMenu = () => {
 
 
   return (
-    <div className="border-b">
+    <div className="">
       <div className="h-9 w-full bg-[#03A5FA]">
         <div className="container mx-auto px-5 h-full">
           <div className="flex justify-between items-center h-full gap-5">
