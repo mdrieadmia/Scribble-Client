@@ -42,14 +42,16 @@ const BlogDetails = () => {
         e.preventDefault();
         const comment = e.target.comment.value;
         const blogId = _id;
-        console.log('comment on blog : ', _id, comment, photoURL, displayName);
-        const commentData = {blogId, comment, photoURL, displayName}
+        const writerPhotoURL = userData.photoURL;
+        console.log('comment on blog : ', _id, comment, writerPhotoURL, displayName);
+        const commentData = {blogId, comment, writerPhotoURL, displayName}
         axios.post('http://localhost:5000/comments', commentData)
         .then(()=>{
             toast.success("Comment posted successfully")
         })
         .catch(()=>{})
     }
+    console.log(comments);
     return (
         <div>
             {
@@ -107,8 +109,18 @@ const BlogDetails = () => {
                                             <>
                                             </>
                                             :
-                                            <div>
-                                                <h1>{comments.length}</h1>
+                                            <div> 
+                                                {
+                                                    comments.map(comment => <div key={comment._id} className="flex items-center mt-3">
+                                                        <div>
+                                                            <img className="w-10 h-10 rounded-full border-[2px] border-blue-400 mr-2" src={comment.writerPhotoURL} alt="user photo" />
+                                                        </div>
+                                                        <div>
+                                                            <h1 className="font-semibold text-sm">{comment?.displayName}</h1>
+                                                            <h1 className="font-medium text-sm text-[#474747]">{comment?.comment}</h1>
+                                                        </div>
+                                                    </div>)
+                                                }
                                             </div>
                                         }
                                     </div>
@@ -116,9 +128,9 @@ const BlogDetails = () => {
                                         !(email === userData?.email) ?
                                             <div>
                                                 <div>
-                                                    <form onSubmit={handleComment} className="flex">
+                                                    <form onSubmit={handleComment} className="flex mt-3">
                                                         <div>
-                                                            <img className="w-10 h-10 rounded-full border-4 border-blue-400 mr-2" src={userData?.photoURL} alt="user photo" />
+                                                            <img className="w-10 h-10 rounded-full border-[2px] border-blue-400 mr-2" src={userData?.photoURL} alt="user photo" />
                                                         </div>
                                                         <textarea rows={1} name="comment"></textarea>
                                                         <input type="submit" value='Comment' className="px-5 py-2 bg-blue-400 text-white font-semibold cursor-pointer hover:bg-blue-500 duration-200" />
