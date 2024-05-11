@@ -47,7 +47,7 @@ const Login = () => {
                             {errors.password && <span className="text-red-500">This field is required</span>}
 
                             <div className="flex justify-center items-center mt-5">
-                                <input className="bg-[#03A5FA] py-[6px] px-5 rounded-md font-medium hover:bg-transparent hover:text-[#03A5FA] border-2 border-transparent hover:border-[#03A5FA] duration-300 text-white text-sm cursor-pointer" type="submit" value={'Login'} />
+                                <input className="bg-green-600 py-[6px] px-5 rounded-md font-medium hover:bg-transparent hover:text-green-600 border-2 border-transparent hover:border-green-600 duration-300 text-white text-sm cursor-pointer" type="submit" value={'Login'} />
                             </div>
                         </form>
                     </div>
@@ -55,10 +55,10 @@ const Login = () => {
                         <h1 className="font-medium text-center mt-3">OR</h1>
                         <h1 className="font-medium text-center">Continue with</h1>
                         <div className="flex justify-center items-center mt-2 gap-2">
-                            <button onClick={handleGoogleLogin} className="flex border px-3 py-2 border-transparent hover:border-[#03A5FA] duration-200 items-center gap-1 font-semibold"><FcGoogle className="text-2xl -mt-1"/> Google</button>
-                            <button onClick={handleGithubLogin} className="flex border px-3 py-2 border-transparent hover:border-[#03A5FA] duration-200 items-center gap-1 font-semibold"><AiFillGithub className="text-2xl -mt-1"/> Github</button>
+                            <button onClick={handleGoogleLogin} className="flex border px-3 py-2 border-transparent hover:border-green-600 duration-200 items-center gap-1 font-semibold"><FcGoogle className="text-2xl -mt-1"/> Google</button>
+                            <button onClick={handleGithubLogin} className="flex border px-3 py-2 border-transparent hover:border-green-600 duration-200 items-center gap-1 font-semibold"><AiFillGithub className="text-2xl -mt-1"/> Github</button>
                         </div>
-                        <h1 className="text-center mt-3 font-medium">Don&apos;t have any account? <Link to={'/register'} className="font-bold hover:text-[#03A5FA] duration-200">Register</Link> Now.</h1>
+                        <h1 className="text-center mt-3 font-medium">Don&apos;t have any account? <Link to={'/register'} className="font-bold hover:text-green-600 duration-200">Register</Link> Now.</h1>
                     </div>
                 </div>
             </div>

@@ -73,7 +73,7 @@ const BlogDetails = () => {
                     </>
                     :
                     <div>
-                        <div className="w-full pt-10 pb-72 bg-[#03A5FAe6]">
+                        <div className="w-full pt-10 pb-72 bg-gradient-to-t from-green-500 to-green-700">
                             <div className="container mx-auto px-5 relative">
                                 <div>
                                     <h2 className="text-lg font-medium mb-3 text-white">Blog details of</h2>
@@ -92,7 +92,7 @@ const BlogDetails = () => {
                             </div>
                             <div>
                                 <div className="font-semibold text-[#474747] flex gap-3 mt-5 items-center">
-                                    <img className="w-10 h-10 rounded-full border-4 border-blue-400" src={photoURL} alt="" />
+                                    <img className="w-10 h-10 rounded-full border-[3px] border-green-400" src={photoURL} alt="" />
                                     <div>
                                         <h1>{displayName}</h1>
                                         <h1>{email}</h1>
@@ -107,7 +107,7 @@ const BlogDetails = () => {
                             {
                                 email === userData?.email ?
                                     <div className="flex justify-center items-center mb-10">
-                                        <Link to={`/blog/update/${blogDetails._id}`} className="px-5 py-2 rounded-lg bg-[#03A5FAe6] text-white font-semibold">Update Post</Link>
+                                        <Link to={`/blog/update/${blogDetails._id}`} className="px-5 py-2 rounded-lg bg-green-500 text-white font-semibold">Update Post</Link>
                                     </div>
                                     :
                                     <></>
@@ -127,7 +127,7 @@ const BlogDetails = () => {
                                                         comments.map(comment => <div key={comment._id}>
                                                             <div className="flex items-start mt-5">
                                                                 <div>
-                                                                    <img className="w-10 h-10 rounded-full border-[2px] border-blue-400 mr-2" src={comment.writerPhotoURL} alt="user photo" />
+                                                                    <img className="w-10 h-10 rounded-full border-[2px] border-green-500 mr-2" src={comment.writerPhotoURL} alt="user photo" />
                                                                 </div>
                                                                 <div>
                                                                     <h1 className="font-semibold text-sm">{comment?.displayName}</h1>
@@ -149,10 +149,10 @@ const BlogDetails = () => {
                                                 <div>
                                                     <form onSubmit={handleComment} className="flex mt-5">
                                                         <div>
-                                                            <img className="w-10 h-10 rounded-full border-[2px] border-blue-400 mr-2" src={userData?.photoURL} alt="user photo" />
+                                                            <img className="w-10 h-10 rounded-full border-[2px] border-green-500 mr-2" src={userData?.photoURL} alt="user photo" />
                                                         </div>
                                                         <textarea rows={1} name="comment"></textarea>
-                                                        <input type="submit" value='Comment' className="px-5 py-2 bg-blue-400 text-white font-semibold cursor-pointer hover:bg-blue-500 duration-200" />
+                                                        <input type="submit" value='Comment' className="px-5 py-2 bg-green-500 text-white font-semibold cursor-pointer hover:bg-green-700 duration-200" />
                                                     </form>
                                                 </div>
                                             </div>

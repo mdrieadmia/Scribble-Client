@@ -27,7 +27,7 @@ const WishlistCard = ({ item, mutateAsync }) => {
                 <div className='p-5 flex-grow'>
                     <div className='flex justify-between w-full items-center'>
                         <h1 className={`px-3 py-1 rounded-md ${category === 'Technology' ? 'bg-red-200 border-2 border-red-300 text-red-500' :
-                            category === 'Sports' ? 'bg-green-200 border-2 border-green-300 text-green-500' :
+                            category === 'Sports' ? 'bg-green-200 border-2 border-green-300 text-green-600' :
                                 category === 'Education' ? 'bg-blue-200 border-2 border-blue-300 text-blue-500' : ''}`}>{category}</h1>
                     </div>
                     <h1 className='mt-4 text-xl font-semibold mb-2'>{title}</h1>

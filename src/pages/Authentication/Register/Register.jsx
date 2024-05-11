@@ -41,10 +41,10 @@ const Register = () => {
                             {errors.password && <span className="text-red-500">This field is required</span>}
 
                             <div className="flex justify-center items-center mt-5">
-                                <input className="bg-[#03A5FA] py-[6px] px-5 rounded-md font-medium hover:bg-transparent hover:text-[#03A5FA] border-2 border-transparent hover:border-[#03A5FA] duration-300 text-white text-sm cursor-pointer" type="submit" value={'Register'} />
+                                <input className="bg-green-600 py-[6px] px-5 rounded-md font-medium hover:bg-transparent hover:text-green-600 border-2 border-transparent hover:border-green-600 duration-300 text-white text-sm cursor-pointer" type="submit" value={'Register'} />
                             </div>
                         </form>
-                        <h1 className="text-center mt-3 font-medium">Already have an account? <Link to={'/login'} className="font-bold hover:text-[#03A5FA] duration-200">Login</Link> Now.</h1>
+                        <h1 className="text-center mt-3 font-medium">Already have an account? <Link to={'/login'} className="font-bold hover:text-green-600 duration-200">Login</Link> Now.</h1>
                     </div>
                 </div>
             </div>

@@ -47,7 +47,7 @@ const AddBlog = () => {
                     {errors.longDescription && <span className="text-red-500">This field is required</span>}
 
                     <div className="flex justify-center items-center mt-5">
-                        <input className="bg-[#03A5FA] py-[6px] px-5 rounded-md font-medium hover:bg-transparent hover:text-[#03A5FA] border-2 border-transparent hover:border-[#03A5FA] duration-300 text-white text-sm cursor-pointer" type="submit" value={'Post'} />
+                        <input className="bg-green-600 py-[6px] px-5 rounded-md font-medium hover:bg-transparent hover:text-green-600 border-2 border-transparent hover:border-green-600 duration-300 text-white text-sm cursor-pointer" type="submit" value={'Post'} />
                     </div>
                 </form>
             </div>

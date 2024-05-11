@@ -9,7 +9,7 @@ const Home = () => {
                 </div>
                 <div className="flex justify-center items-center mt-12">
                     <input type="text" className="border-none bg-[#eeeeee] rounded-s-full px-5 active:outline-none placeholder:text-sm" placeholder="Type here"/>
-                    <button className="bg-[#03A5FA] py-[10px] px-5 rounded-e-full text-sm font-semibold hover:bg-[#5276ec] duration-300 text-white">Search</button>
+                    <button className="bg-green-600 py-[10px] px-5 rounded-e-full text-sm font-semibold hover:bg-[#5276ec] duration-300 text-white">Search</button>
                 </div>
             </div>
         </div>

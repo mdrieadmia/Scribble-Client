@@ -41,7 +41,7 @@ const Wishlist = () => {
                         wishlist.length === 0 ?
                             <div className="w-full h-full flex justify-center items-center pt-16 flex-col gap-5 pb-10">
                                 <h1 className="text-center text-xl text-red-500">No item avaiable</h1>
-                                <Link to={'/blogs'} className="px-5 py-2 bg-[#03A5FA] text-white font-semibold">See All Blogs</Link>
+                                <Link to={'/blogs'} className="px-5 py-2 bg-green-600 text-white font-semibold">See All Blogs</Link>
                             </div>
                             :
                             <div>

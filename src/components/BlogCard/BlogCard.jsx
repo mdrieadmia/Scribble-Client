@@ -42,18 +42,18 @@ const BlogCard = ({ blog }) => {
                         <div className='p-5 flex-grow'>
                             <div className='flex justify-between w-full items-center'>
                                 <h1 className={`px-3 py-1 rounded-md ${category === 'Technology' ? 'bg-red-200 border-2 border-red-300 text-red-500' :
-                                    category === 'Sports' ? 'bg-green-200 border-2 border-green-300 text-green-500' :
+                                    category === 'Sports' ? 'bg-green-200 border-2 border-green-300 text-green-600' :
                                         category === 'Education' ? 'bg-blue-200 border-2 border-blue-300 text-blue-500' : ''}`}>{category}</h1>
                                 <p className='tracking-widest'>{blogDate}</p>
                             </div>
                             <h1 className='mt-4 text-xl font-semibold mb-2'>{title}</h1>
                             <p className='text-sm text-justify'>{shortDescription}</p>
                         </div>
-                        <div className='px-5 flex gap-5 justify-between'>
-                            <Link to={`/blog/details/${_id}`}>
-                                <button className='flex items-center gap-1 px-3 py-1 rounded-md font-semibold text-blue-500 bg-blue-200 hover:text-white duration-300 hover:bg-blue-400'><IoEyeSharp className='text-xl' />Details</button>
+                        <div className='px-5 flex gap-3 justify-between'>
+                            <Link to={`/blog/details/${_id}`} className='w-1/2'>
+                                <button className='w-full flex items-center gap-1 rounded-[5px] px-3 py-1 justify-center font-semibold text-green-600 bg-green-200 hover:text-white duration-300 hover:bg-green-400'><IoEyeSharp className='text-xl' />Details</button>
                             </Link>
-                            <button onClick={() => handleWishlist(_id)} className='flex items-center gap-1 px-3 py-1 rounded-md font-semibold text-pink-500 bg-pink-200 hover:text-white duration-300 hover:bg-pink-400'><IoMdHeart className='text-xl' />Wishlist</button>
+                            <button onClick={() => handleWishlist(_id)} className='w-1/2 rounded-[5px] flex items-center justify-center gap-1 px-3 py-1 font-semibold text-pink-500 bg-pink-200 hover:text-white duration-300 hover:bg-pink-500'><IoMdHeart className='text-xl' />Wishlist</button>
                         </div>
                     </div>
             }

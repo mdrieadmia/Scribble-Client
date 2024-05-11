@@ -23,7 +23,7 @@ const AllBlogs = () => {
                 :
             <div className="container mx-auto px-5 pb-20">
                 <div className="bg-[url('https://i.postimg.cc/gkLJHHV2/hd-office-background-wwmb5ymdbjbjv689.jpg')] h-auto w-full bg-cover bg-no-repeat bg-center rounded-lg">
-                    <div className="bg-blue-900 w-full h-full opacity-90 rounded-lg py-10">
+                    <div className="bg-green-900 w-full h-full opacity-90 rounded-lg py-10">
                         <h1 className="text-2xl font-bold text-white text-center">Dive into Our Blog Library</h1>
                         <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-5">
                             <div className="flex justify-center items-center gap-3">
@@ -36,7 +36,7 @@ const AllBlogs = () => {
                             </div>
                             <div className="flex justify-center items-center px-5">
                                 <input type="text" className="w-[90%] border-none bg-[#eeeeee] rounded-s-full px-5 active:outline-none placeholder:text-sm" placeholder="Type here" />
-                                <button className="bg-[#03A5FA] py-[10px] px-5 rounded-e-full text-sm font-semibold hover:bg-[#5276ec] duration-300 text-white">Search</button>
+                                <button className="bg-green-600 py-[10px] px-5 rounded-e-full text-sm font-semibold hover:bg-green-700 duration-300 text-white">Search</button>
                             </div>
                         </div>
                     </div>
