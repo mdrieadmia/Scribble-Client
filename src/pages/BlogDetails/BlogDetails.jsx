@@ -11,6 +11,8 @@ const BlogDetails = () => {
     const { userData } = useAuth();
     const axiosSecure = useAxiosSecure()
     const { id } = useParams()
+
+    // Get Blogs Data functionality
     const { data: blogDetails = [], isLoading } = useQuery({
         queryFn: () => getBlogs(),
         queryKey: ['Details']
@@ -20,6 +22,18 @@ const BlogDetails = () => {
         console.log(data);
         return data;
     }
+
+    // Get comment data fuctionality
+    const { data: comments = [], isLoading : isCommentLoading } = useQuery({
+        queryFn: () => getComments(),
+        queryKey: ['Comments']
+    })
+    const getComments = async () => {
+        const { data } = await axiosSecure.get(`/comments?id=${id}`)
+        console.log(data);
+        return data;
+    }
+
     const { _id, title, photoURL, blogPhoto, displayName, email, date, shortDescription, longDescription } = blogDetails || {}
     const postedDate = new Date(date).toLocaleString()
 
@@ -88,10 +102,15 @@ const BlogDetails = () => {
                                 <h1 className="text-2xl font-bold text-center">Comments</h1>
                                 <div>
                                     <div>
-                                        <h1>Comment 1</h1>
-                                        <h1>Comment 2</h1>
-                                        <h1>Comment 3</h1>
-                                        <h1>Comment 4</h1>
+                                        {
+                                            isCommentLoading ?
+                                            <>
+                                            </>
+                                            :
+                                            <div>
+                                                <h1>{comments.length}</h1>
+                                            </div>
+                                        }
                                     </div>
                                     {
                                         !(email === userData?.email) ?
