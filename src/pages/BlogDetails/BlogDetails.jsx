@@ -1,10 +1,12 @@
-import { useQuery } from "@tanstack/react-query";
-import { useParams } from "react-router-dom";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { Link, useParams } from "react-router-dom";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { SlCalender } from "react-icons/sl";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { IoMdHeart } from "react-icons/io";
+import { MdOutlineReply } from "react-icons/md";
 
 
 const BlogDetails = () => {
@@ -24,15 +26,25 @@ const BlogDetails = () => {
     }
 
     // Get comment data fuctionality
-    const { data: comments = [], isLoading : isCommentLoading } = useQuery({
+    const { data: comments = [], isLoading: isCommentLoading, refetch } = useQuery({
         queryFn: () => getComments(),
         queryKey: ['Comments']
     })
     const getComments = async () => {
         const { data } = await axiosSecure.get(`/comments?id=${id}`)
-        console.log(data);
         return data;
+
     }
+
+    const { mutateAsync } = useMutation({
+        mutationFn: async (id) => {
+            const { data } = await axiosSecure.get(`/comments?id=${id}`)
+            return data
+        },
+        onSuccess: () => {
+            refetch()
+        }
+    })
 
     const { _id, title, photoURL, blogPhoto, displayName, email, date, shortDescription, longDescription } = blogDetails || {}
     const postedDate = new Date(date).toLocaleString()
@@ -44,12 +56,13 @@ const BlogDetails = () => {
         const blogId = _id;
         const writerPhotoURL = userData.photoURL;
         console.log('comment on blog : ', _id, comment, writerPhotoURL, displayName);
-        const commentData = {blogId, comment, writerPhotoURL, displayName}
+        const commentData = { blogId, comment, writerPhotoURL, displayName }
         axios.post('http://localhost:5000/comments', commentData)
-        .then(()=>{
-            toast.success("Comment posted successfully")
-        })
-        .catch(()=>{})
+            .then(() => {
+                toast.success("Comment posted successfully")
+                mutateAsync(_id)
+            })
+            .catch(() => { })
     }
     console.log(comments);
     return (
@@ -93,8 +106,8 @@ const BlogDetails = () => {
                         <div className="mb-20 container mx-auto px-5">
                             {
                                 email === userData?.email ?
-                                    <div>
-                                        <h1>Update</h1>
+                                    <div className="flex justify-center items-center mb-10">
+                                        <Link to={`/blog/update/${blogDetails._id}`} className="px-5 py-2 rounded-lg bg-[#03A5FAe6] text-white font-semibold">Update Post</Link>
                                     </div>
                                     :
                                     <></>
@@ -106,29 +119,35 @@ const BlogDetails = () => {
                                     <div>
                                         {
                                             isCommentLoading ?
-                                            <>
-                                            </>
-                                            :
-                                            <div> 
-                                                {
-                                                    comments.map(comment => <div key={comment._id} className="flex items-center mt-3">
-                                                        <div>
-                                                            <img className="w-10 h-10 rounded-full border-[2px] border-blue-400 mr-2" src={comment.writerPhotoURL} alt="user photo" />
-                                                        </div>
-                                                        <div>
-                                                            <h1 className="font-semibold text-sm">{comment?.displayName}</h1>
-                                                            <h1 className="font-medium text-sm text-[#474747]">{comment?.comment}</h1>
-                                                        </div>
-                                                    </div>)
-                                                }
-                                            </div>
+                                                <>
+                                                </>
+                                                :
+                                                <div>
+                                                    {
+                                                        comments.map(comment => <div key={comment._id}>
+                                                            <div className="flex items-start mt-5">
+                                                                <div>
+                                                                    <img className="w-10 h-10 rounded-full border-[2px] border-blue-400 mr-2" src={comment.writerPhotoURL} alt="user photo" />
+                                                                </div>
+                                                                <div>
+                                                                    <h1 className="font-semibold text-sm">{comment?.displayName}</h1>
+                                                                    <h1 className="font-medium text-justify max-w-[450px] text-sm text-[#474747]">{comment?.comment}</h1>
+                                                                </div>
+                                                            </div>
+                                                            <div className="flex gap-7 ml-12 mt-1">
+                                                                <h1 className="text-sm font-semibold flex items-center gap-1"><IoMdHeart className="text-[18px]"/> like</h1>
+                                                                <h1 className="text-sm font-semibold flex items-center gap-1"><MdOutlineReply className="text-xl"/> Replay</h1>
+                                                            </div>
+                                                        </div>)
+                                                    }
+                                                </div>
                                         }
                                     </div>
                                     {
                                         !(email === userData?.email) ?
                                             <div>
                                                 <div>
-                                                    <form onSubmit={handleComment} className="flex mt-3">
+                                                    <form onSubmit={handleComment} className="flex mt-5">
                                                         <div>
                                                             <img className="w-10 h-10 rounded-full border-[2px] border-blue-400 mr-2" src={userData?.photoURL} alt="user photo" />
                                                         </div>

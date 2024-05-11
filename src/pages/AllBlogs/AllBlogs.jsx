@@ -15,6 +15,12 @@ const AllBlogs = () => {
 
     return (
         <div className="bg-gray-100 border-b">
+            {
+                isLoading ?
+                <div>
+                    <h1>Loading...</h1>
+                </div>
+                :
             <div className="container mx-auto px-5 pb-20">
                 <div className="bg-[url('https://i.postimg.cc/gkLJHHV2/hd-office-background-wwmb5ymdbjbjv689.jpg')] h-auto w-full bg-cover bg-no-repeat bg-center rounded-lg">
                     <div className="bg-blue-900 w-full h-full opacity-90 rounded-lg py-10">
@@ -50,6 +56,7 @@ const AllBlogs = () => {
                     </div>
                 </div>
             </div>
+            }
         </div>
     );
 };

@@ -9,6 +9,7 @@ import Featured from "../pages/Featured/Featured";
 import Wishlist from "../pages/Wishlist/Wishlist";
 import Register from "../pages/Authentication/Register/Register";
 import BlogDetails from "../pages/BlogDetails/BlogDetails";
+import UpdateBlog from "../pages/UpdateBlog/UpdateBlog";
 
 const Router = createBrowserRouter([
     {
@@ -47,6 +48,10 @@ const Router = createBrowserRouter([
             {
                 path: '/blog/details/:id',
                 element: <BlogDetails/>
+            },
+            {
+                path: '/blog/update/:id',
+                element: <UpdateBlog/>
             },
         ]
 
