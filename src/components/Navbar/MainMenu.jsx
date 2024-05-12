@@ -76,12 +76,12 @@ const MainMenu = () => {
             }
             <Navbar.Toggle />
           </div>
-          <Navbar.Collapse>
-            <Navbar.Link><NavLink to={'/'} className="flex items-center gap-[5px] font-semibold hover:text-green-600 duration-300"> <RiHome4Line /> Home</NavLink></Navbar.Link>
-            <Navbar.Link><NavLink to={'/blogs'} className="flex items-center gap-[5px] font-semibold hover:text-green-600 duration-300"> <CgFileDocument /> All Blogs</NavLink></Navbar.Link>
-            <Navbar.Link><NavLink to={'/add'} className="flex items-center gap-[5px] font-semibold hover:text-green-600 duration-300"> <HiOutlineDocumentAdd /> Add Blog</NavLink></Navbar.Link>
-            <Navbar.Link><NavLink to={'/featured'} className="flex items-center gap-[5px] font-semibold hover:text-green-600 duration-300"> <MdOutlineFeaturedVideo /> Featured</NavLink></Navbar.Link>
-            <Navbar.Link><NavLink to={'/wishlist'} className="flex items-center gap-[5px] font-semibold hover:text-green-600 duration-300"> <FaRegHeart /> Whishlist</NavLink></Navbar.Link>
+          <Navbar.Collapse className="md:space-x-0 main-menu">
+            <Navbar.Link><NavLink to={'/'} className="flex items-center font-semibold gap-1 hover:text-white duration-300 px-2 py-[5px] rounded-md"> <RiHome4Line /> Home</NavLink></Navbar.Link>
+            <Navbar.Link><NavLink to={'/blogs'} className="flex items-center font-semibold gap-1 hover:text-white duration-300 px-2 py-[5px] rounded-md"> <CgFileDocument /> All Blogs</NavLink></Navbar.Link>
+            <Navbar.Link><NavLink to={'/add'} className="flex items-center font-semibold gap-1 hover:text-white duration-300 px-2 py-[5px] rounded-md"> <HiOutlineDocumentAdd /> Add Blog</NavLink></Navbar.Link>
+            <Navbar.Link><NavLink to={'/featured'} className="flex items-center font-semibold gap-1 hover:text-white duration-300 px-2 py-[5px] rounded-md"> <MdOutlineFeaturedVideo /> Featured</NavLink></Navbar.Link>
+            <Navbar.Link><NavLink to={'/wishlist'} className="flex items-center font-semibold gap-1 hover:text-white duration-300 px-2 py-[5px] rounded-md"> <FaRegHeart /> Whishlist</NavLink></Navbar.Link>
           </Navbar.Collapse>
         </Navbar>
       </div>

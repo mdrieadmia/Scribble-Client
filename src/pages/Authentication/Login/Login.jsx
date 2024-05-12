@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form"
 import { FcGoogle } from "react-icons/fc";
 import { AiFillGithub } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import toast from 'react-hot-toast';
 
@@ -10,27 +10,59 @@ import toast from 'react-hot-toast';
 const Login = () => {
    
     const { register, handleSubmit, formState: { errors } } = useForm()
-    const {googleLogin, githubLogin, handleLogin} = useAuth()
+    const {googleLogin, githubLogin, setLoading, handleLogin} = useAuth()
+    const navigate = useNavigate();
+    const location = useLocation();
+    const previousLocation = location?.state || '/';
+
     // Email Password Login Handeler 
     const handleEmailLogin = (data) =>{
         const {email, password} = data;
+        if(password.length < 6){
+            toast.error("6 Charecter Needed")
+            return;
+           }
+           else if(!/[A-Z]/.test(password)){
+            toast.error("Don't have a capital letter")
+            return;
+           }
+           else if(!/[0-9]/.test(password)){
+            toast.error("Don't have a numeric character")
+            return;
+           }
+           else if(!/[!@#$%^&*]/.test(password)){
+            toast.error("Don't have a special character")
+            return;
+           }
         handleLogin(email, password)
-        .then(()=> toast.success('Logged in successfully'))
-        .catch(()=> toast.error("Login failed"))
+        .then(()=> {
+            toast.success('Logged in successfully')
+            navigate(previousLocation)
+        })
+        .catch(()=> {
+            toast.error("Login failed")
+            setLoading(false)
+        })
     }
 
     // Google Login Handeler
     const handleGoogleLogin = () => {
         googleLogin()
-        .then(()=> toast.success('Logged in successfully'))
+        .then(()=> {
+            toast.success('Logged in successfully')
+            navigate(previousLocation)
+        })
         .catch(()=> toast.error("Login failed"))
     }
 
     // Github Login Handeler
     const handleGithubLogin = () => {
         githubLogin()
-        .then(()=> console.log('Login with google successfully'))
-        .catch(()=> console.log("Login failed"))
+        .then(()=> {
+            toast.success('Login with google successfully')
+            navigate(previousLocation)
+        })
+        .catch(()=>{toast.error("Login failed")})
     }
 
     return (

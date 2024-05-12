@@ -10,6 +10,7 @@ import Wishlist from "../pages/Wishlist/Wishlist";
 import Register from "../pages/Authentication/Register/Register";
 import BlogDetails from "../pages/BlogDetails/BlogDetails";
 import UpdateBlog from "../pages/UpdateBlog/UpdateBlog";
+import ProtectedRoute from "../protectedRoute/ProtectedRoute";
 
 const Router = createBrowserRouter([
     {
@@ -35,23 +36,23 @@ const Router = createBrowserRouter([
             },
             {
                 path: '/add',
-                element: <AddBlog/>
+                element: <ProtectedRoute><AddBlog/></ProtectedRoute>
             },
             {
                 path: '/featured',
-                element: <Featured/>
+                element: <ProtectedRoute><Featured/></ProtectedRoute>
             },
             {
                 path: '/wishlist',
-                element: <Wishlist/>
+                element: <ProtectedRoute><Wishlist/></ProtectedRoute>
             },
             {
                 path: '/blog/details/:id',
-                element: <BlogDetails/>
+                element: <ProtectedRoute><BlogDetails/></ProtectedRoute>
             },
             {
                 path: '/blog/update/:id',
-                element: <UpdateBlog/>
+                element: <ProtectedRoute><UpdateBlog/></ProtectedRoute>
             },
         ]
 

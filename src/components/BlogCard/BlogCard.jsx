@@ -12,7 +12,7 @@ const BlogCard = ({ blog }) => {
     const { userData, loading } = useAuth();
     const axiosSecure = useAxiosSecure();
     const { _id, category, title, blogPhoto, shortDescription, date } = blog || {};
-    const blogDate = new Date(date).toLocaleDateString()
+    const blogDate = new Date(date).toLocaleString('default', {day : '2-digit', month: 'long' , year: 'numeric' })
     const blogId = _id;
     const { email } = userData || {};
     const handleWishlist = () => {

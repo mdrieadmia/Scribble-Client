@@ -1,14 +1,34 @@
 import { useForm } from "react-hook-form"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import toast from 'react-hot-toast';
 import useAuth from "../../../hooks/useAuth";
 
 const Register = () => {
-    const {handleRegister, setUser, handleUpdateUserData} = useAuth();
+    const {handleRegister, setUser, setLoading, handleUpdateUserData} = useAuth();
     const { register, handleSubmit, formState: { errors } } = useForm()
+    const navigate = useNavigate();
+
 
     const handleEmailRegister = (data) => {
         const {name, photo, email, password} = data;
+
+        if(password.length < 6){
+            toast.error("6 Charecter Needed")
+            return;
+           }
+           else if(!/[A-Z]/.test(password)){
+            toast.error("Don't have a capital letter")
+            return;
+           }
+           else if(!/[0-9]/.test(password)){
+            toast.error("Don't have a numeric character")
+            return;
+           }
+           else if(!/[!@#$%^&*]/.test(password)){
+            toast.error("Don't have a special character")
+            return;
+           }
+
         handleRegister(email, password)
         .then((res)=>{
             toast.success('Registerd succesfully')
@@ -16,9 +36,11 @@ const Register = () => {
             handleUpdateUserData(name, photo)
             .then(()=>{})
             .catch(()=>{})
+            navigate('/')
         })
         .catch(()=>{
             toast.error("Register Failed")
+            setLoading(false)
         })
     }
     return (
