@@ -17,7 +17,7 @@ const Featured = () => {
 
 
     return (
-        <div className="">
+        <div className="mb-20">
             {
                 isLoading ?
                     <div>
@@ -26,9 +26,9 @@ const Featured = () => {
                     :
                     <div>
                         <div>
-                            <h1 className="text-2xl font-bold text-center pt-10">Featured</h1>
-                            <div className="container mx-auto px-5">
-                                <FeaturedTable featured={featuredBlogs}/>
+                            <h1 className="text-2xl font-bold text-center pt-10">Featured Blogs</h1>
+                            <div className="container mx-auto border mt-10">
+                                <FeaturedTable featured={featuredBlogs.slice(0, 10)}/>
                             </div>
                         </div>
                     </div>
