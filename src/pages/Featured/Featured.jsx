@@ -12,7 +12,7 @@ const Featured = () => {
         queryKey: ['Blogs']
     })
     const getBlogs = async () => {
-        const { data } = await axiosSecure.get(`/blogs?email=${userData.email}`)
+        const { data } = await axiosSecure.get(`/featured?email=${userData.email}`)
         const featuredData = data.sort((a, b) => b.longDescription.length - a.longDescription.length)
         return featuredData;
     }
@@ -21,15 +21,15 @@ const Featured = () => {
 
     return (
         <div className="mb-20">
+            <h1 className="text-2xl font-bold text-center pt-10">Featured Blogs</h1>
             {
                 isLoading ?
-                    <div>
-                        <h1>Loading...</h1>
+                    <div className="flex justify-center items-center">
+                        <h1></h1>
                     </div>
                     :
                     <div>
                         <div>
-                            <h1 className="text-2xl font-bold text-center pt-10">Featured Blogs</h1>
                             <div className="container mx-auto border mt-10">
                                 <FeaturedTable featured={featuredBlogs.slice(0, 10)}/>
                             </div>
