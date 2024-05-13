@@ -37,7 +37,7 @@ const WishlistCard = ({ item, mutateAsync }) => {
                     <Link to={`/blog/details/${blogId}`}>
                         <button className='flex items-center gap-1 px-3 py-1 rounded-md font-semibold text-green-500 bg-green-200 hover:text-white duration-300 hover:bg-green-400'><IoEyeSharp className='text-xl' />Details</button>
                     </Link>
-                    <button onClick={() => handleDelete(_id)} className='flex items-center gap-1 px-3 py-1 rounded-md font-semibold text-pink-500 bg-pink-200 hover:text-white duration-300 hover:bg-pink-400'><MdDelete className='text-xl' />Remove</button>
+                    <button onClick={() => handleDelete(_id)} className='flex items-center gap-1 px-3 py-1 rounded-md font-semibold text-red-500 bg-red-200 hover:text-white duration-300 hover:bg-red-400'><MdDelete className='text-xl' />Remove</button>
                 </div>
             </div>
 

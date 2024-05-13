@@ -157,7 +157,9 @@ const BlogDetails = () => {
                                                 </div>
                                             </div>
                                             :
-                                            <></>
+                                            <div>
+                                                <h1 className="text-center text-red-600 font-semibold text-lg mt-5">You can&quot;t comment in your own blog.</h1>
+                                            </div>
                                     }
                                 </div>
                             </div>

@@ -1,4 +1,13 @@
+import toast from "react-hot-toast";
+
 const Newsletter = () => {
+
+    const handleNewletter = (e) =>{
+        e.preventDefault();
+        toast.success("Thank's for subscribe")
+        e.target.reset()
+    }
+
     return (
         <div className="container mx-auto px-5">
             <div className="py-24 bg-gradient-to-r from-green-500 to-green-700 mb-20 mt-10 rounded-lg">
@@ -8,9 +17,10 @@ const Newsletter = () => {
 
                 </div>
                 <div className="bg-gradient-to-r from-green-500 to-green-700 mt-10 flex justify-center items-center">
-
-                    <input type="email" className="bg-green-400 border-none w-[85%] md:w-[60%] lg:w-[40%] placeholder:text-white text-white" placeholder="Enter Your Email" />
-                    <input className="px-5 py-2 bg-green-500 text-white cursor-pointer hover:bg-green-800 duration-300 font-semibold" type="submit" value="Subscribe" />
+                    <form onSubmit={handleNewletter} className="w-[85%] md:w-[60%] lg:w-[40%] mx-auto flex justify-center items-center">
+                        <input type="email" className="bg-green-400 border-none w-full placeholder:text-white text-white" placeholder="Enter Your Email" />
+                        <input className="px-5 py-2 bg-green-500 text-white cursor-pointer hover:bg-green-800 duration-300 font-semibold" type="submit" value="Subscribe" />
+                    </form>
                 </div>
             </div>
         </div>

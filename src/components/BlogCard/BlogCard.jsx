@@ -5,10 +5,11 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import toast from 'react-hot-toast';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
+import Skeleton from '../Skeleton/Skeleton';
 
 
 
-const BlogCard = ({ blog }) => {
+const BlogCard = ({ blog, isLoading }) => {
     const { userData, loading } = useAuth();
     const axiosSecure = useAxiosSecure();
     const { _id, category, title, blogPhoto, shortDescription, date } = blog || {};
@@ -26,13 +27,12 @@ const BlogCard = ({ blog }) => {
             })
     }
 
-
     return (
         <>
             {
-                loading ?
+                isLoading || loading ?
                     <div>
-                        <h1>Loading...</h1>
+                        <Skeleton/>
                     </div>
                     :
                     <div className='bg-white rounded-lg pb-5 flex flex-col border-2 border-transparent hover:border-green-200 duration-300 cursor-pointer'>
@@ -62,7 +62,8 @@ const BlogCard = ({ blog }) => {
 };
 
 BlogCard.propTypes = {
-    blog: PropTypes.object
+    blog: PropTypes.object,
+    isLoading: PropTypes.object
 };
 
 export default BlogCard;
