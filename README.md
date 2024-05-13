@@ -17,4 +17,4 @@
 
 =========== Used Technology ===========
 
-✅ React    ✅ MongoDB    ✅ ExpressJS    ✅ Firebase    ✅ Tailwind    ✅ Flowbite    ✅ Tenstack Query    ✅ Framer Motion    ✅ React Data Table     ✅ JWT Authentication etc.
+✅ React    ✅ MongoDB    ✅ ExpressJS    ✅ Firebase    ✅ Tailwind    ✅ Flowbite    ✅ Tenstack Query    ✅ Framer Motion    ✅ React Data Table     ✅ JWT Authentication    ✅ React Icons    ✅ Swiper JS
