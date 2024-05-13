@@ -5,11 +5,11 @@ import FooterContent from "../components/Footer/FooterContent";
 const Root = () => {
     return (
         <div>
-            <MainMenu/>
+            <MainMenu />
             <div className="min-h-[calc(100vh-432px)]">
                 <Outlet className="h-full" />
             </div>
-            <FooterContent/>
+            <FooterContent />
         </div>
     );
 };

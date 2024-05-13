@@ -23,7 +23,7 @@ const BlogCard = ({ blog, isLoading }) => {
     const { email } = userData || {};
     const handleWishlist = () => {
         const wishlistItem = { blogId, title, blogPhoto, shortDescription, category, email };
-        axiosSecure.post('http://localhost:5000/wishlist', wishlistItem)
+        axiosSecure.post('https://scribble-server.vercel.app/wishlist', wishlistItem)
             .then(() => {
                 toast.success("Blog Added In Wishlist")
             })

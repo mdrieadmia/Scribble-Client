@@ -16,22 +16,22 @@ const HappyUsers = () => {
                             <div className="bg-white p-6 space-y-3 text-green-500 text-center hover:bg-green-500 hover:text-white duration-300 rounded-md cursor-pointer">
                                 <h1 className="flex justify-center"><FaBookOpen className="text-3xl " /></h1>
                                 <h1 className="text-xl font-semibold">Total Blogs</h1>
-                                <p className="text-4xl font-bold">13000+</p>
+                                <p className="text-2xl lg:text-4xl font-bold">13000+</p>
                             </div>
                             <div className="bg-white p-6 space-y-3 text-green-500 text-center hover:bg-green-500 hover:text-white duration-300 rounded-md cursor-pointer">
                                 <h1 className="flex justify-center"><FaUserShield className="text-3xl " /></h1>
                                 <h1 className="text-xl font-semibold">Verified Users</h1>
-                                <p className="text-4xl font-bold">45000+</p>
+                                <p className="text-2xl lg:text-4xl font-bold">45000+</p>
                             </div>
                             <div className="bg-white p-6 space-y-3 text-green-500 text-center hover:bg-green-500 hover:text-white duration-300 rounded-md cursor-pointer">
                                 <h1 className="flex justify-center"><MdReviews className="text-3xl " /></h1>
                                 <h1 className="text-xl font-semibold">Positive Reviews</h1>
-                                <p className="text-4xl font-bold">8300+</p>
+                                <p className="text-2xl lg:text-4xl font-bold">8300+</p>
                             </div>
                             <div className="bg-white p-6 space-y-3 text-green-500 text-center hover:bg-green-500 hover:text-white duration-300 rounded-md cursor-pointer">
                                 <h1 className="flex justify-center"><HiPencilAlt className="text-3xl " /></h1>
                                 <h1 className="text-xl font-semibold">Daily Post</h1>
-                                <p className="text-4xl font-bold">200+</p>
+                                <p className="text-2xl lg:text-4xl font-bold">200+</p>
                             </div>
                         </div>
                     </div>

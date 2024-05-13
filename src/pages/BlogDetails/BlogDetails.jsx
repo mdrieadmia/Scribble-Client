@@ -57,7 +57,7 @@ const BlogDetails = () => {
         const writerPhotoURL = userData.photoURL;
         console.log('comment on blog : ', _id, comment, writerPhotoURL, displayName);
         const commentData = { blogId, comment, writerPhotoURL, displayName }
-        axios.post('http://localhost:5000/comments', commentData)
+        axios.post('https://scribble-server.vercel.app/comments', commentData)
             .then(() => {
                 toast.success("Comment posted successfully")
                 mutateAsync(_id)

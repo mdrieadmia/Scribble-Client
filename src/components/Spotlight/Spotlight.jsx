@@ -20,7 +20,7 @@ const Spotlight = () => {
                         <h1 className='ml-2 text-2xl font-bold text-[#474747]'>Showcase Reviews</h1>
                         <h1><MdFormatQuote className='text-5xl text-green-500' /></h1>
                     </div>
-                    <div className='ml-2'>
+                    <div className='ml-2 max-w-[350px]'>
                         <Swiper
                             spaceBetween={30}
                             slidesPerView={1}
@@ -36,7 +36,7 @@ const Spotlight = () => {
                             modules={[Autoplay, Pagination]}
                             className="mySwiper"
                         >
-                            <SwiperSlide className='w-[90%]'>
+                            <SwiperSlide className=''>
                                 <div className='mb-7'>
                                     <h1 className='text-xl font-semibold'>A Gripping Psychological Thriller</h1>
                                     <p className='text-sm mt-3'>In The Silent Patient, Alex Michaelides crafts a riveting narrative that keeps readers on the edge of their seats until the very last page. The story follows Alicia Berenson, a celebrated painter who inexplicably murders her husband and then goes silent. </p>
@@ -44,7 +44,7 @@ const Spotlight = () => {
                                     <p className='text-lg font-semibold flex items-center gap-2 mt-3'> <FaUser  className='mb-1'/>MD Riead Hasan</p>
                                 </div>
                             </SwiperSlide>
-                            <SwiperSlide className='w-[90%]'>
+                            <SwiperSlide className=''>
                                 <div className='mb-7'>
                                     <h1 className='text-xl font-semibold'>Wireless Freedom with Superior Sound</h1>
                                     <p className='text-sm mt-3'>The Apple AirPods Pro redefine the wireless earbud experience with their sleek design, active noise cancellation, and impressive audio quality. Whether youre commuting, working out, or simply relaxing at home, these earbuds deliver immersive.</p>
@@ -52,7 +52,7 @@ const Spotlight = () => {
                                     <p className='text-lg font-semibold flex items-center gap-2 mt-3'> <FaUser  className='mb-1'/>Shahrin Neha</p>
                                 </div>
                             </SwiperSlide>
-                            <SwiperSlide className='w-[90%]'>
+                            <SwiperSlide className=''>
                                 <div className='mb-7'>
                                     <h1 className='text-xl font-semibold'>A Genre-Defying Masterpiece</h1>
                                     <p className='text-sm mt-3'>Bong Joon-hos Parasite is a cinematic tour de force that defies easy categorization. Part dark comedy, part social commentary, and part thriller, this South Korean film transcends genre boundaries to deliver a thought-provoking and visually stunning experience.</p>
@@ -60,7 +60,7 @@ const Spotlight = () => {
                                     <p className='text-lg font-semibold flex items-center gap-2 mt-3'> <FaUser  className='mb-1'/>Thomas Alvi</p>
                                 </div>
                             </SwiperSlide>
-                            <SwiperSlide className='w-[90%]'>
+                            <SwiperSlide className=''>
                                 <div className='mb-7'>
                                     <h1 className='text-xl font-semibold'>A Journey Through Time and Tradition</h1>
                                     <p className='text-sm mt-3'>Kyoto, Japan, is a city that seamlessly blends ancient tradition with modern innovation, offering visitors a truly unique travel experience. From the iconic Fushimi Inari Shrine with its thousands of vermillion torii gates to the serene Zen.</p>

@@ -15,7 +15,7 @@ const AllBlogs = () => {
         queryKey: ['Blogs', filter, search]
     })
     const getBlogs = async () => {
-        const { data } = await axios.get(`http://localhost:5000/blogs?filter=${filter}&search=${search}&email=${userData?.email}`)
+        const { data } = await axios.get(`https://scribble-server.vercel.app/blogs?filter=${filter}&search=${search}&email=${userData?.email}`)
         console.log(data);
         return data;
     }
@@ -50,16 +50,26 @@ const AllBlogs = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="mt-5">
+                    <div className="mt-5 min-h-[400px]">
                         <div >
                             {
                                 isLoading ?
                                     <div className="min-h-screen">
                                         
                                     </div>
+                                    : 
+                                    blogs.length===0?
+                                    <div>
+                                        <h1 className="text-red-500 text-center font-semibold pt-20"> No Blog Found </h1>
+                                    </div>
                                     :
                                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                                         {
+                                            blogs.length===0?
+                                            <div>
+                                                <h1 className="text-red-500 text-center font-semibold pt-20"> No Blog Found </h1>
+                                            </div>
+                                            :
                                             blogs.map(blog => <> <BlogCard key={blog._id} blog={blog} isLoading={isLoading} /></> )
                                             
                                         }

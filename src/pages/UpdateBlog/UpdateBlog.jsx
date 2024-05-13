@@ -25,7 +25,7 @@ const UpdateBlog = () => {
     // Blog update functionality
     const handleUpdate = (data) =>{
         const newBlog = {...data}
-        axios.put(`http://localhost:5000/blog/update?id=${id}`, newBlog)
+        axios.put(`https://scribble-server.vercel.app/blog/update?id=${id}`, newBlog)
         .then(()=>{
             toast.success("Updated Successfully")
         })

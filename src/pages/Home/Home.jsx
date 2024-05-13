@@ -9,7 +9,9 @@ const Home = () => {
         <>
             <Banner/>
             <RecentBlog/>
-            <Spotlight/>
+            <div className="w-[90%] mx-auto px-5 overflow-hidden">
+                <Spotlight/>
+            </div>
             <HappyUsers/>
             <div className="py-10"></div>
             <Newsletter/>

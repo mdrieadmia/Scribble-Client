@@ -66,7 +66,10 @@ const Login = () => {
                 .catch(()=>{})
             }
         })
-        .catch(()=> toast.error("Login failed"))
+        .catch(()=> {
+            toast.error("Login failed")
+            setLoading(false)
+        })
     }
 
     // Github Login Handeler
@@ -82,7 +85,10 @@ const Login = () => {
             }
             navigate(previousLocation)
         })
-        .catch(()=>{toast.error("Login failed")})
+        .catch(()=>{
+            toast.error("Login failed")
+            setLoading(false)
+        })
     }
 
     return (
