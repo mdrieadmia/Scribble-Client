@@ -12,15 +12,14 @@ const AddBlog = () => {
         const {displayName, photoURL, email} = userData;
         const date = new Date().toString();
         const blog = {...data, displayName, photoURL, email, date};
-        console.log(blog);
+ 
 
         axiosSecure.post(`/post?email=${userData?.email}`, {...blog})
-        .then((res)=>{
-            console.log(res)
+        .then(()=>{
             toast.success("Blog posted successfully")
             reset();
         })
-        .catch((err)=>console.log(err))
+        .catch(()=>{})
     }
 
     return (

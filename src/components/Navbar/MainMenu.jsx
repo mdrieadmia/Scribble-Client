@@ -19,8 +19,8 @@ const MainMenu = () => {
   const { user, loading, handleLogOut } = useAuth() || {};
   const handleLogout = () => {
     handleLogOut()
-      .then(() => console.log("Log out successfull"))
-      .catch(() => console.log("Log out failed"))
+      .then(() => {})
+      .catch(() => {})
   }
 
 

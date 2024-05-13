@@ -14,7 +14,6 @@ const Wishlist = () => {
     })
     const getBlogs = async () => {
         const { data } = await axiosSecure.get(`/wishlist?email=${userData.email}`)
-        console.log(data);
         return data;
     }
 

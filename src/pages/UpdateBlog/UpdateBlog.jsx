@@ -18,7 +18,6 @@ const UpdateBlog = () => {
     })
     const getBlogs = async () => {
         const { data } = await useAxiosSecure.get(`/blog/details?id=${id}`)
-        console.log(data);
         return data;
     }
 

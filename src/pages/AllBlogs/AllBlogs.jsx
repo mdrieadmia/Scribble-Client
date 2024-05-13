@@ -16,7 +16,6 @@ const AllBlogs = () => {
     })
     const getBlogs = async () => {
         const { data } = await axios.get(`https://scribble-server.vercel.app/blogs?filter=${filter}&search=${search}&email=${userData?.email}`)
-        console.log(data);
         return data;
     }
 

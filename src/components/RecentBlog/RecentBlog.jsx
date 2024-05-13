@@ -10,7 +10,6 @@ const RecentBlog = () => {
     })
     const getBlogs = async () => {
         const { data } = await axios.get('https://scribble-server.vercel.app/recent')
-        console.log(data);
         return data;
     }
 

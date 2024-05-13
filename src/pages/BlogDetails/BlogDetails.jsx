@@ -21,7 +21,6 @@ const BlogDetails = () => {
     })
     const getBlogs = async () => {
         const { data } = await axiosSecure.get(`/blog/details?id=${id}`)
-        console.log(data);
         return data;
     }
 
@@ -55,7 +54,6 @@ const BlogDetails = () => {
         const comment = e.target.comment.value;
         const blogId = _id;
         const writerPhotoURL = userData.photoURL;
-        console.log('comment on blog : ', _id, comment, writerPhotoURL, displayName);
         const commentData = { blogId, comment, writerPhotoURL, displayName }
         axios.post('https://scribble-server.vercel.app/comments', commentData)
             .then(() => {
@@ -64,7 +62,6 @@ const BlogDetails = () => {
             })
             .catch(() => { })
     }
-    console.log(comments);
     return (
         <div>
             {
