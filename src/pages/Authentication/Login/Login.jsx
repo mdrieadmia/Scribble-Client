@@ -4,6 +4,7 @@ import { AiFillGithub } from "react-icons/ai";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import toast from 'react-hot-toast';
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 
 
@@ -11,6 +12,7 @@ const Login = () => {
    
     const { register, handleSubmit, formState: { errors } } = useForm()
     const {googleLogin, githubLogin, setLoading, handleLogin} = useAuth()
+    const axiosSecure = useAxiosSecure()
     const navigate = useNavigate();
     const location = useLocation();
     const previousLocation = location?.state || '/';
@@ -35,8 +37,14 @@ const Login = () => {
             return;
            }
         handleLogin(email, password)
-        .then(()=> {
+        .then((res)=> {
             toast.success('Logged in successfully')
+            if(res){
+                const user = {email : res?.user?.email};
+                axiosSecure.post('/jwt', user)
+                .then(()=>{})
+                .catch(()=>{})
+            }
             navigate(previousLocation)
         })
         .catch(()=> {
@@ -48,9 +56,15 @@ const Login = () => {
     // Google Login Handeler
     const handleGoogleLogin = () => {
         googleLogin()
-        .then(()=> {
+        .then((res)=> {
             toast.success('Logged in successfully')
             navigate(previousLocation)
+            if(res){
+                const user = {email : res?.user?.email};
+                axiosSecure.post('/jwt', user)
+                .then(()=>{})
+                .catch(()=>{})
+            }
         })
         .catch(()=> toast.error("Login failed"))
     }
@@ -58,8 +72,14 @@ const Login = () => {
     // Github Login Handeler
     const handleGithubLogin = () => {
         githubLogin()
-        .then(()=> {
+        .then((res)=> {
             toast.success('Login with google successfully')
+            if(res){
+                const user = {email : res?.user?.email};
+                axiosSecure.post('/jwt', user)
+                .then(()=>{})
+                .catch(()=>{})
+            }
             navigate(previousLocation)
         })
         .catch(()=>{toast.error("Login failed")})

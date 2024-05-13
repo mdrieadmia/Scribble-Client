@@ -1,15 +1,18 @@
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import FeaturedTable from "../../components/FeaturedTable/FeaturedTable";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+import useAuth from "../../hooks/useAuth";
 
 const Featured = () => {
 
+    const axiosSecure = useAxiosSecure()
+    const {userData} = useAuth()
     const { data: featuredBlogs = [], isLoading } = useQuery({
         queryFn: () => getBlogs(),
         queryKey: ['Blogs']
     })
     const getBlogs = async () => {
-        const { data } = await axios.get(`http://localhost:5000/blogs`)
+        const { data } = await axiosSecure.get(`/blogs?email=${userData.email}`)
         const featuredData = data.sort((a, b) => b.longDescription.length - a.longDescription.length)
         return featuredData;
     }

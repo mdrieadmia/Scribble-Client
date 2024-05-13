@@ -16,8 +16,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 
 const MainMenu = () => {
 
-  const { user, loading, handleLogOut } = useAuth();
-
+  const { user, loading, handleLogOut } = useAuth() || {};
   const handleLogout = () => {
     handleLogOut()
       .then(() => console.log("Log out successfull"))

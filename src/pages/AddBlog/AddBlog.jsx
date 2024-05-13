@@ -1,9 +1,11 @@
 import { useForm } from "react-hook-form"
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
-import axios from "axios";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+
 
 const AddBlog = () => {
+    const axiosSecure = useAxiosSecure();
     const { register, reset, handleSubmit, formState: { errors } } = useForm()
     const {userData} = useAuth();
     const handlePost = (data) =>{
@@ -12,7 +14,7 @@ const AddBlog = () => {
         const blog = {...data, displayName, photoURL, email, date};
         console.log(blog);
 
-        axios.post('http://localhost:5000/post', {...blog})
+        axiosSecure.post(`/post?email=${userData?.email}`, {...blog})
         .then((res)=>{
             console.log(res)
             toast.success("Blog posted successfully")

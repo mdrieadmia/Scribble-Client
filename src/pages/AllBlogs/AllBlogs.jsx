@@ -1,12 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import BlogCard from "../../components/BlogCard/BlogCard";
 import { useState } from "react";
+import useAuth from "../../hooks/useAuth";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const AllBlogs = () => {
-
+    const {userData} = useAuth();
     const [filter, setFilter] = useState('')
     const [search, setSearch] = useState('')
+    const axiosSecure = useAxiosSecure()
 
 
     const { data: blogs = [], isLoading } = useQuery({
@@ -14,7 +16,7 @@ const AllBlogs = () => {
         queryKey: ['Blogs', filter, search]
     })
     const getBlogs = async () => {
-        const { data } = await axios.get(`http://localhost:5000/blogs?filter=${filter}&search=${search}`)
+        const { data } = await axiosSecure.get(`/blogs?filter=${filter}&search=${search}&email=${userData?.email}`)
         console.log(data);
         return data;
     }

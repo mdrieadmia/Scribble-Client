@@ -7,17 +7,17 @@ const axiosSecure = axios.create({
     withCredentials : true
 })
 const useAxiosSecure = () => {
-    const {signOutUser} = useAuth();
+    const {handleLogOut} = useAuth();
     const navigate = useNavigate();
     axiosSecure.interceptors.response.use(
         (res)=>{
-            console.log("Got valid respons");
             return res;
         },
         (err)=>{
             if(err.response.status === 401 || err.response.status === 403){
-                signOutUser();
+                handleLogOut();
                 navigate('/login')
+                console.log("Unauthorized Access");
             }
             return Promise.reject(err);
         }
