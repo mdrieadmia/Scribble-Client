@@ -3,7 +3,6 @@ import { IoEyeSharp } from 'react-icons/io5';
 import { MdDelete } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
-import toast from 'react-hot-toast';
 import useAuth from '../../hooks/useAuth';
 
 const WishlistCard = ({ item, mutateAsync }) => {
@@ -14,7 +13,6 @@ const WishlistCard = ({ item, mutateAsync }) => {
     const handleDelete = (_id) => {
         axiosSecure.delete(`/wishlist/delete?id=${_id}`)
             .then(() => {
-                toast.success('Item removed succsfully')
                 mutateAsync(userData.email)
             })
     }

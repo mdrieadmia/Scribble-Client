@@ -1,5 +1,7 @@
 import toast from "react-hot-toast";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 const Newsletter = () => {
 
     const handleNewletter = (e) =>{
@@ -10,7 +12,7 @@ const Newsletter = () => {
 
     return (
         <div className="container mx-auto px-5">
-            <div className="py-24 bg-gradient-to-r from-green-500 to-green-700 mb-20 mt-10 rounded-lg">
+            <div data-aos="fade-up" className="py-24 bg-gradient-to-r from-green-500 to-green-700 mb-20 mt-10 rounded-lg">
                 <h1 className="text-3xl font-semibold text-center mb-5 text-white">Subscribe To Get The Latest News About Us</h1>
                 <p className="text-center text-sm max-w-[520px] mx-auto text-white">Stay updated with exclusive access to our latest blog posts by subscribing to our newsletter for all the latest insights!</p>
                 <div>

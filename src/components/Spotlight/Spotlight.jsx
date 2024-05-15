@@ -4,18 +4,22 @@ import 'swiper/css';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { MdFormatQuote, MdOutlineStar } from 'react-icons/md';
 import { FaUser } from 'react-icons/fa';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 const Spotlight = () => {
     return (
         <div className="container mx-auto px-5">
-            <div>
+            <div data-aos="fade-up" >
                 <h1 className="text-2xl font-semibold text-center mb-2">Spotlight</h1>
                 <p className="text-center text-sm max-w-[560px] mx-auto text-[#474747]">This could feature quick and actionable tips related to your blog&apos;s niche or topics. Whether it&apos;s productivity hacks or DIY tutorials</p>
             </div>
             <div className="flex flex-col md:flex-row gap-10 items-center justify-center">
                 <div>
-                    <img className='w-[90%] mx-auto' src="https://i.postimg.cc/MHFZLTK7/Frame-1014.png" alt="Spot Light Image" />
+                    <img data-aos="fade-up"  className='w-[90%] mx-auto' src="https://i.postimg.cc/MHFZLTK7/Frame-1014.png" alt="Spot Light Image" />
                 </div>
-                <div className='max-w-[500px] px-5'>
+                <div data-aos="fade-up" className='max-w-[500px] px-5'>
                     <div>
                         <h1 className='ml-2 text-2xl font-bold text-[#474747]'>Showcase Reviews</h1>
                         <h1><MdFormatQuote className='text-5xl text-green-500' /></h1>

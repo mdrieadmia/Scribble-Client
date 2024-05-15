@@ -41,7 +41,7 @@ const MainMenu = () => {
         </div>
       </div>
       <div className="container mx-auto">
-        <Navbar rounded>
+        <Navbar>
           <Navbar>
             <img src="https://i.postimg.cc/Znwr2bW5/logo.png" className="h-6 sm:h-9" alt="Flowbite React Logo" />
           </Navbar>
@@ -59,7 +59,7 @@ const MainMenu = () => {
                 </>
                 :
                 !user ?
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 md:hidden lg:flex">
                     <Link to={'/login'} className="bg-green-600 py-[6px] px-5 rounded-md font-medium hover:bg-transparent hover:text-green-600 border-2 border-transparent hover:border-green-600 duration-300 text-white text-sm">Login</Link>
                     <Link to={'register'} className="bg-green-600 py-[6px] px-5 rounded-md font-medium hover:bg-transparent hover:text-green-600 border-2 border-transparent hover:border-green-600 duration-300 text-white text-sm">Register</Link>
                   </div>
@@ -73,9 +73,9 @@ const MainMenu = () => {
                     </div>
                   </div>
             }
-            <Navbar.Toggle />
+            <Navbar.Toggle className="md:block lg:hidden" />
           </div>
-          <Navbar.Collapse className="md:space-x-0 main-menu">
+          <Navbar.Collapse className="main-menu">
             <Navbar.Link><NavLink to={'/'} className="flex items-center font-semibold gap-1 hover:text-white duration-300 px-2 py-[5px] rounded-md"> <RiHome4Line /> Home</NavLink></Navbar.Link>
             <Navbar.Link><NavLink to={'/blogs'} className="flex items-center font-semibold gap-1 hover:text-white duration-300 px-2 py-[5px] rounded-md"> <CgFileDocument /> All Blogs</NavLink></Navbar.Link>
             <Navbar.Link><NavLink to={'/add'} className="flex items-center font-semibold gap-1 hover:text-white duration-300 px-2 py-[5px] rounded-md"> <HiOutlineDocumentAdd /> Add Blog</NavLink></Navbar.Link>

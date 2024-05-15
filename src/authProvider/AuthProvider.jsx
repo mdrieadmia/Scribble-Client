@@ -31,8 +31,8 @@ const AuthProvider = ({children}) => {
     }
 
     // Handle Sign Out
-    const handleLogOut = () =>{
-        axios.get('https://scribble-server.vercel.app/logout', {withCredentials : true})
+    const handleLogOut = async() =>{
+        await axios.post('https://scribble-server.vercel.app/logout', user, {withCredentials : true})
         .then(()=>{})
         .catch(()=>{})
         return signOut(auth)

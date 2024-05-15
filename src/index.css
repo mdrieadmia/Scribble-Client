@@ -18,3 +18,7 @@ body{
   border-radius: 6px;
   transition: 0.3s all linear;
 }
+
+.main-menu ul li a{
+  margin-left: -10px;
+}

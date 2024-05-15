@@ -1,6 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import BlogCard from "../BlogCard/BlogCard";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 const RecentBlog = () => {
 
@@ -16,7 +19,7 @@ const RecentBlog = () => {
     return (
         <div className="bg-green-50 mb-16">
             <div className="container mx-auto px-5 py-16">
-                <div className="mb-10">
+                <div data-aos="fade-up" className="mb-10">
                     <h1 className="text-2xl font-semibold text-center mb-2">Recent Blog Post</h1>
                     <p className="text-center text-sm max-w-[560px] mx-auto text-[#474747]">Exploring the role in sustainable agriculture from precision farming to resource optimization and ecological balance</p>
                 </div>

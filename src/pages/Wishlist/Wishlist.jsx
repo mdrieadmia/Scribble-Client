@@ -3,6 +3,7 @@ import useAuth from "../../hooks/useAuth";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import WishlistCard from "../../components/WishlistCard/WishlistCard";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Wishlist = () => {
     const { userData, loading } = useAuth();
@@ -24,6 +25,7 @@ const Wishlist = () => {
         },
         onSuccess: () => {
             refetch()
+            toast.success('Item removed succsfully')
         }
     })
 
