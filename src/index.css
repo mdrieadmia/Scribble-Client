@@ -13,8 +13,8 @@ body{
   color: white;
   background: #057A55;
 }
-.main-menu ul li:hover{
-  background-color: #057A55;
+.menu-item:hover{
+  background-color: #057a55;
   border-radius: 6px;
   transition: 0.3s all linear;
 }

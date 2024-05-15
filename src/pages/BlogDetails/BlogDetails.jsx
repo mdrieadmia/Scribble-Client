@@ -55,7 +55,8 @@ const BlogDetails = () => {
         const comment = e.target.comment.value;
         const blogId = _id;
         const writerPhotoURL = userData.photoURL;
-        const commentData = { blogId, comment, writerPhotoURL, displayName }
+        const userDisplayName = userData.displayName
+        const commentData = { blogId, comment, writerPhotoURL, userDisplayName }
         axios.post('https://scribble-server.vercel.app/comments', commentData)
             .then(() => {
                 mutateAsync(_id)
@@ -136,7 +137,7 @@ const BlogDetails = () => {
                                                                     <img className="w-10 h-10 rounded-full border-[2px] border-green-500 mr-2" src={comment.writerPhotoURL} alt="user photo" />
                                                                 </div>
                                                                 <div>
-                                                                    <h1 className="font-semibold text-sm">{comment?.displayName}</h1>
+                                                                    <h1 className="font-semibold text-sm">{comment?.userDisplayName}</h1>
                                                                     <h1 className="font-medium text-justify max-w-[450px] text-sm text-[#474747]">{comment?.comment}</h1>
                                                                 </div>
                                                             </div>
