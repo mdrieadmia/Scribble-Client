@@ -7,6 +7,8 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { IoMdHeart } from "react-icons/io";
 import { MdOutlineReply } from "react-icons/md";
+import ShareSocial from "../../components/ShareSocial/ShareSocial";
+
 
 
 const BlogDetails = () => {
@@ -97,17 +99,23 @@ const BlogDetails = () => {
                                 <h1 className="text-2xl font-semibold">{shortDescription}</h1>
                                 <h1 className="text-[#474747] font-medium text-justify mt-5">{longDescription}</h1>
                             </div>
-                            <div>
-                                <div className="font-semibold text-[#474747] flex gap-3 mt-5 items-center">
-                                    <img className="w-10 h-10 rounded-full border-[3px] border-green-400" src={photoURL} alt="" />
+                            <div className="flex justify-between">
+                                <div>
+                                    <div className="font-semibold text-[#474747] flex gap-3 mt-5 items-center">
+                                        <img className="w-10 h-10 rounded-full border-[3px] border-green-400" src={photoURL} alt="" />
+                                        <div>
+                                            <h1>{displayName}</h1>
+                                            <h1>{email}</h1>
+                                        </div>
+                                    </div>
                                     <div>
-                                        <h1>{displayName}</h1>
-                                        <h1>{email}</h1>
+                                        <h1 className="ml-[52px] font-semibold text-[#474747] flex gap-3 items-center tracking-wider mt-3"> <SlCalender /> Date : {postedDate}</h1>
                                     </div>
                                 </div>
                                 <div>
-                                    <h1 className="ml-[52px] font-semibold text-[#474747] flex gap-3 items-center tracking-wider mt-3"> <SlCalender /> Date : {postedDate}</h1>
+                                    <ShareSocial id={id} blogPhoto={blogPhoto} title={title}/>
                                 </div>
+                                
                             </div>
                         </div>
                         <div className="mb-20 container mx-auto px-5">
@@ -142,8 +150,8 @@ const BlogDetails = () => {
                                                                 </div>
                                                             </div>
                                                             <div className="flex gap-7 ml-12 mt-1">
-                                                                <h1 className="text-sm font-semibold flex items-center gap-1"><IoMdHeart className="text-[18px]"/> like</h1>
-                                                                <h1 className="text-sm font-semibold flex items-center gap-1"><MdOutlineReply className="text-xl"/> Replay</h1>
+                                                                <h1 className="text-sm font-semibold flex items-center gap-1"><IoMdHeart className="text-[18px]" /> like</h1>
+                                                                <h1 className="text-sm font-semibold flex items-center gap-1"><MdOutlineReply className="text-xl" /> Replay</h1>
                                                             </div>
                                                         </div>)
                                                     }
@@ -176,5 +184,6 @@ const BlogDetails = () => {
         </div>
     );
 };
+
 
 export default BlogDetails;
